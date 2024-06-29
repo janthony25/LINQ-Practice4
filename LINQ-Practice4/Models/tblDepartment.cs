@@ -7,5 +7,6 @@ namespace LINQ_Practice4.Models
         [Key]
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
+        public ICollection<tblEmployee> tblEmployee { get; set; }
     }
 }
