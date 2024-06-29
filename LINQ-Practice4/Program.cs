@@ -1,4 +1,5 @@
 using LINQ_Practice4.Data;
+using LINQ_Practice4.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+// ADD Repository
+builder.Services.AddScoped<IEmployeeDepartmentRepository, EmployeeDepartmentRepository>();
 
 var app = builder.Build();
 
