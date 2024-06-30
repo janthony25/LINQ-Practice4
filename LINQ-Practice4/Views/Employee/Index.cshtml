@@ -1,0 +1,23 @@
+﻿@model List<LINQ_Practice4.Models.tblEmployee>
+
+<h1>Employee List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>EmployeeName</th>
+            <th>EmployeeAge</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.EmployeeAge</td>
+            </tr>
+        }
+    </tbody>
+</table>
