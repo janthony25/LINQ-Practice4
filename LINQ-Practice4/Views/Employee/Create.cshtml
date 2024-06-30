@@ -1,0 +1,33 @@
+﻿@model tblEmployee
+
+<h1>Add new Employee</h1>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group mb-2">
+        <label asp-for="EmployeeName" class="control-label"></label>
+        <input asp-for="EmployeeName" class="form-control" />
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="EmployeeAge" class="control-label"></label>
+        <input asp-for="EmployeeAge" class="form-control" />
+        <span asp-validation-for="EmployeeAge" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="DepartmentId" class="control-label"></label>
+        <input asp-for="DepartmentId" class="form-control" />
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
